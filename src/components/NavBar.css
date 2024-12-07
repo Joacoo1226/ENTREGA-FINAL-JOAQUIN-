@@ -1,0 +1,159 @@
+/* src/components/NavBar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.brand:hover {
+  color: #ff6f61;
+}
+
+.categories {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.categories li a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.categories li a:hover {
+  color: #ff6f61;
+  transform: translateY(-2px);
+}
+
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.cart-icon a:hover {
+  color: #ff6f61;
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #b81405;
+  color: #fff;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .categories {
+    gap: 10px;
+  }
+
+  .cart-icon a {
+    font-size: 1.3rem;
+  }
+}
+
+/* src/components/ItemListContainer.css */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cuadrícula flexible */
+  gap: 20px; /* Espacio entre los productos */
+  padding: 20px;
+  justify-items: center; /* Centra los productos dentro de cada celda */
+  margin-top: 80px; /* Asegura que los productos no estén tapados por la navbar fija */
+}
+
+.product-item {
+  background-color: #ec0707;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  height: 350px; /* Controla la altura del producto */
+}
+
+.product-item:hover {
+  transform: scale(1.05); /* Efecto de hover para agrandar el producto */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.product-item img {
+  width: 100%;
+  height: 200px; /* Ajusta el tamaño de la imagen */
+  object-fit: cover; /* Mantiene la proporción de la imagen sin deformarse */
+}
+
+.product-info {
+  padding: 10px;
+}
+
+.product-info h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: white;
+}
+
+.product-info p {
+  font-size: 1rem;
+  color: white;
+}
+
+.add-to-cart {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #ff4e3b; /* Cambio de color al pasar el mouse */
+}
+
+.product-item:hover img {
+  opacity: 0.8; /* Efecto de opacidad cuando se pasa el mouse */
+}
